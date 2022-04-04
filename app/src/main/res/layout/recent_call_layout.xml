@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/layout_call_log_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:elevation="8dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/call_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:id="@+id/layout_call_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8sp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:hint="Today"
+                        android:visibility="invisible"
+                        android:textStyle="italic"/>
+
+
+                    <TextView
+                        android:id="@+id/layout_call_log_contact_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:textColorHint="@color/black"
+                        android:hint="@string/contacts"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/layout_call_log_ph_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        android:textColorHint="@color/black"
+                        android:hint="@string/app_name"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/info_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.7">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_info"/>
+
+
+                </LinearLayout>
+
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/layout_call_log_type"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="16sp"/>-->
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="4dp"-->
+<!--                android:orientation="horizontal">-->
+
+<!--               -->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="4dp"-->
+<!--                android:orientation="horizontal">-->
+
+
+<!--               -->
+
+<!--            </LinearLayout>-->
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>

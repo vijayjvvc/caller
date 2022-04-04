@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/av_card"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7dp"
+    android:elevation="7dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="7dp"
+        android:layout_height="wrap_content">
+
+      <TextView
+          android:id="@+id/contacts_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Vijay jv Vc"
+          android:textStyle="italic"
+          android:gravity="center_vertical"
+          android:textSize="16sp"
+          android:textColor="@color/black"/>
+
+      <TextView
+            android:id="@+id/contacts_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contacts_name"
+            android:textStyle="bold"
+            android:hint="Vijay jv Vc"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+   </RelativeLayout>
+</androidx.cardview.widget.CardView>

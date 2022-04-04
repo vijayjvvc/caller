@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:layout_marginStart="7dp"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/msg_number"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:src="@drawable/msg"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/num_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="+91 701595xxxx"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:maxLines="1"
+        android:maxWidth="280dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/aclonica"
+        android:layout_marginStart="7dp"
+        android:textColor="@color/blue"/>
+
+
+</RelativeLayout>
