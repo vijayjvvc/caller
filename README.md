@@ -10,7 +10,8 @@
 
  ## -Logo 
  
-(https://user-images.githubusercontent.com/67819608/175864195-a5e80aa2-f9f1-492c-a266-9861a3afe9bc.png)
+![dialer](https://user-images.githubusercontent.com/67819608/175864399-a752ad72-9003-4953-a581-28b44f47fba1.png)
+
 
 
 
