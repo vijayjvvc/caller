@@ -18,13 +18,5 @@
 
  ## -UI/UX Design images
  
- 
+ ![uiUx](https://user-images.githubusercontent.com/67819608/175865008-6fd869ca-903b-4abe-a1a3-83f7f649ad66.jpeg)
 
- ## -Getting Data from Urls using Volley
- 
- 
-
-
-
- ## -Getting Data from Urls using Retrofit with Query handling
- 
