@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/Theme.Jcaller"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.DialFragment">
 
@@ -29,8 +30,6 @@
                 android:paddingEnd="30dp"
                 android:textAlignment="textEnd"
                 android:maxLines="1"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
                 android:textSize="30sp" />
 
             <TextView

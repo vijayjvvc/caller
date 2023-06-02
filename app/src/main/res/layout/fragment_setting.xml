@@ -1,17 +1,703 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/Theme.Jcaller"
     tools:context=".fragment.SettingFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/settings"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
 
-</RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        style="@style/Theme.Jcaller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_bar_text">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="90dp">
+
+            <TextView
+                android:id="@+id/setting_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="?actionBarSize"
+                android:fontFamily="@font/aclonica"
+                android:paddingBottom="30dp"
+                android:text="@string/settings"
+                android:textSize="30sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/premium_card_setting"
+                android:layout_width="200dp"
+                android:layout_height="310dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/crown"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/setting_text">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/crown"
+                    android:padding="10dp"
+                    android:src="@drawable/crown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+
+                    android:padding="10dp"
+                    android:text=" Become \n Premium"
+                    android:textSize="30sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ringtone_card_setting"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/premium_card_setting"
+                app:layout_constraintTop_toBottomOf="@id/setting_text">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/ringtone"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_ringtone" />
+
+                <TextView
+                    android:id="@+id/ringtone_card_setting_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="41dp"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingBottom="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="Ringtone"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Ringtone"
+                    android:textSize="18sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/general_card_setting"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/premium_card_setting"
+                app:layout_constraintTop_toBottomOf="@id/ringtone_card_setting">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/generalSetting"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_settings"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/aclonica"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="5dp"
+                    android:text=" General \n Settings"
+                    android:textSize="18sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/more_card_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/premium_card_setting">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/speed_dial_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/SPEEdIAL"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_dialpad"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Manage Speed Dial"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            style="@style/Theme.Jcaller.setting"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="58dp"
+                            android:background="@color/darkGrey" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/call_blocker_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/callBlocker"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_call_blocker" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Call Blocker"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            style="@style/Theme.Jcaller.setting"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="58dp"
+                            android:background="@color/darkGrey" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/call_announcer_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/callAnn"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_call_ann" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Call Announcer"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            style="@style/Theme.Jcaller.setting"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="58dp"
+                            android:background="@color/darkGrey" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/quick_response_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/quickRes"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_quick_response" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Quick Response"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            style="@style/Theme.Jcaller.setting"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="58dp"
+                            android:background="@color/darkGrey" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/flash_on_call_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/flash"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_flash" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Flash On Call"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            style="@style/Theme.Jcaller.setting"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="58dp"
+                            android:background="@color/darkGrey" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/fake_call_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/fake"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_call" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Fake Call"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            style="@style/Theme.Jcaller.setting"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="70dp"
+                            android:layout_marginTop="58dp"
+                            android:background="@color/darkGrey" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dark_mode_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/round_corner"
+                            android:backgroundTint="@color/black"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_dark_mode" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/aclonica"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Dark Mode"
+                            android:textSize="18sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/dark_mode_on_off"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"
+                            android:textOff="Off"
+                            android:textOn="On"
+                            android:thumb="@drawable/thumb"
+                            app:showText="true"
+                            app:track="@drawable/track" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/about_us_card_setting"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/about"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/more_card_setting">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/about"
+                    android:padding="20dp"
+                    android:src="@drawable/ic_info"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:text=" About \n Us"
+                    android:textSize="30sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/help_card_setting"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/about_us_card_setting"
+                app:layout_constraintTop_toBottomOf="@id/more_card_setting">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/help"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_help" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Help"
+                    android:textSize="18sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/privacy_card_setting"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/privacy"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/help_card_setting">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/privacy"
+                    android:padding="20dp"
+                    android:src="@drawable/ic_privacy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:text=" Privacy \n Policy"
+                    android:textSize="30sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rate_card_setting"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toStartOf="@+id/privacy_card_setting"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_us_card_setting">
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_corner"
+                    android:backgroundTint="@color/RateUs"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_rate" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Rate Us"
+                    android:textSize="18sp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/action_bar_text"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:fontFamily="@font/aclonica"
+        android:paddingTop="10dp"
+        android:text="Settings"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

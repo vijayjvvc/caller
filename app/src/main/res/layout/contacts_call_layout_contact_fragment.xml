@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <TextView
+        android:id="@+id/text_name_starter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/darkGrey"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="gone"
+        tools:ignore="RtlSymmetry" />
+
+
+    <RelativeLayout
+        android:id="@+id/av_card"
+        style="@style/Theme.Jcaller.card"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/text_name_starter">
+
+        <androidx.cardview.widget.CardView
+            style="@style/Theme.Jcaller.card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:elevation="20dp"
+            app:cardCornerRadius="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/photo_con"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:background="@color/blue"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:id="@+id/profile_pic_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_contacts" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/contacts_name"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:hint="Vijay jv Vc"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/contacts_number"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@+id/contacts_name"
+                android:layout_toEndOf="@+id/photo_con"
+                android:gravity="center_vertical"
+                android:hint="+91 985550212x"
+                android:paddingTop="7dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

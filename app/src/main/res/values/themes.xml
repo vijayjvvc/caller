@@ -1,13 +1,65 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Jcaller" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">#99090115</item>
-        <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
 
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.Jcaller" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/darkGrey</item>
+        <item name="background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
+
     </style>
+
+
+    <style name="Theme.Jcaller.Incoming" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColor">#FFF</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnBackground">#DF000000</item>
+
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnBackground</item>
+
+    </style>
+
+    <style name="Theme.Jcaller.setting" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="backgroundColor">@color/btnBackground</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:tint">@color/black</item>
+
+    </style>
+
+    <style name="Theme.Jcaller.general" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="backgroundColor">@color/btnBackground</item>
+    </style>
+
+
+    <style name="Theme.Jcaller.round" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="color">@color/white</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+
+    <style name="Theme.Jcaller.Premium" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="Theme.Jcaller.card" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="backgroundColor">@color/btnBackground</item>
+        <item name="backgroundTint">@color/btnBackground</item>
+        <item name="android:backgroundTint">@color/grey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:tint">@color/black</item>
+
+    </style>
+
 </resources>

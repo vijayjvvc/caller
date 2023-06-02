@@ -1,15 +1,22 @@
 package com.JvWorld.jcaller.calllog;
 
+import static android.content.Context.TELECOM_SERVICE;
+
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Bundle;
+import android.telecom.TelecomManager;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +31,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.JvWorld.jcaller.MainActivity;
 import com.JvWorld.jcaller.R;
+import com.JvWorld.jcaller.callHandler.Placecall;
 import com.JvWorld.jcaller.director.Profile;
+import com.JvWorld.jcaller.someVariable.StcVariable;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -57,44 +67,57 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.MyViewHo
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            currentLog = callLogModelArrayList.get(position);
+        currentLog = callLogModelArrayList.get(position);
 
-            if (aa==0){
-                if (currentLog.getCallType().equals("Missed")){
-                    holder.tv_contact_name.setTextColor(Color.RED);
-                    holder.tv_ph_num.setTextColor(Color.RED);
-                }
-            }else{
-                    holder.tv_contact_name.setTextColor(Color.RED);
-                    holder.tv_ph_num.setTextColor(Color.RED);
-                    holder.today.setVisibility(View.VISIBLE);
-                    holder.today.setText(currentLog.getCallDateToday());
-            }
-            holder.tv_ph_num.setText(currentLog.getPhNumber());
-            holder.tv_contact_name.setText(currentLog.getContactName());
+//        if (aa == 0) {
+        if (currentLog.getCallType().equals("Missed")) {
+            holder.tv_contact_name.setTextColor(Color.RED);
+            holder.tv_ph_num.setTextColor(Color.RED);
+        }
+        holder.tv_ph_num.setText(currentLog.getPhNumber());
+        holder.tv_contact_name.setText(currentLog.getContactName());
+        holder.today.setVisibility(View.VISIBLE);
+        holder.today.setText(currentLog.getCallDateToday());
+
+//        } else {
+//            holder.tv_contact_name.setTextColor(Color.RED);
+//            holder.tv_ph_num.setTextColor(Color.RED);
+//            holder.today.setVisibility(View.VISIBLE);
+//            holder.today.setText(currentLog.getCallDateToday());
+//            holder.tv_ph_num.setText(currentLog.getPhNumber());
+//            holder.tv_contact_name.setText(currentLog.getContactName());
+//        }
 
     }
 
 
     @Override
     public int getItemCount() {
-        aa = callLogModelArrayList.get(0).getCallTYpe();
         int a = callLogModelArrayList.size();
+        if (a > 0) {
+            aa = callLogModelArrayList.get(0).getCallTYpe();
+        }
         int v = 0;
 
-        if (aa!=1){
-            if (a>=70){
-                v=a-50;
+        if (aa != 1) {
+            if (a >= 70) {
+                v = a - 50;
             }
         }
-        return callLogModelArrayList.size()-v;
+        return callLogModelArrayList.size() - v;
 //        return callLogModelArrayList==null ? 0 : callLogModelArrayList.size()-v;
-        }
+    }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public void filterList(ArrayList<CallLogModel> filterList) {
+        callLogModelArrayList = filterList;
+        notifyDataSetChanged();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         LinearLayout callCard, info;
         TextView tv_ph_num, tv_contact_name, today;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_ph_num = itemView.findViewById(R.id.layout_call_log_ph_no);
@@ -112,8 +135,9 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.MyViewHo
             callCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String dial = "tel:" +tv_ph_num.getText().toString();
-                    context.startActivity(new Intent(Intent.ACTION_CALL,Uri.parse(dial)));
+                    String dial = tv_ph_num.getText().toString();
+                    Toast.makeText(context, dial, Toast.LENGTH_SHORT).show();
+                    StcVariable.alertBottomSheet("tel", dial, context);
                 }
             });
 
@@ -124,7 +148,8 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.MyViewHo
                     String con_number = tv_ph_num.getText().toString();
                     Intent intent = new Intent(context, Profile.class);
                     intent.putExtra("name_contact",con_name);
-                    intent.putExtra("num_contact",con_number);
+                    intent.putExtra("num_contact", con_number);
+                    intent.putExtra("act_contact", "R");
                     context.startActivity(intent);
                 }
             });

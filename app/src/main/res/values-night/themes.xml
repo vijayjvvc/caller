@@ -1,13 +1,49 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Theme.Jcaller" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/black</item>
 
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="colorOnBackground">@color/black</item>
+        <item name="backgroundColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
+
     </style>
+
+    <style name="Theme.Jcaller.setting" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="backgroundColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:tint">@color/white</item>
+
+    </style>
+
+    <style name="Theme.Jcaller.general" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="backgroundColor">#F7191919</item>
+    </style>
+
+    <style name="Theme.Jcaller.round" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="color">@color/black</item>
+        <item name="android:tint">@color/black</item>
+    </style>
+
+    <style name="Theme.Jcaller.Premium" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="Theme.Jcaller.card" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="backgroundColor">@color/btnBackground</item>
+        <item name="backgroundTint">@color/btnBackground</item>
+        <item name="android:backgroundTint">@color/btnBackground</item>
+        <!--        <item name="android:textColor">@color/black</item>-->
+        <!--        <item name="android:tint">@color/black</item>-->
+
+    </style>
+
 </resources>

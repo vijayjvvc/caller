@@ -1,42 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:id="@+id/av_card"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="7dp"
-    android:elevation="7dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
 
+    <TextView
+        android:id="@+id/text_name_starter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/darkGrey"
+        android:paddingStart="10dp"
+        android:text="a"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/av_card"
+        android:background="@color/darkGrey" />
 
     <RelativeLayout
+        android:id="@+id/av_card"
+        style="@style/Theme.Jcaller"
         android:layout_width="match_parent"
-        android:padding="7dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_name_starter"
+        android:padding="5dp">
 
-      <TextView
-          android:id="@+id/contacts_name"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Vijay jv Vc"
-          android:textStyle="italic"
-          android:gravity="center_vertical"
-          android:textSize="16sp"
-          android:textColor="@color/black"/>
 
-      <TextView
+        <!--            <androidx.cardview.widget.CardView-->
+        <!--                android:id="@+id/photo_con"-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="40dp"-->
+        <!--                android:background="@color/blue"-->
+        <!--                android:layout_marginEnd="15dp"-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                app:cardCornerRadius="20dp">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/profile_pic_con"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:src="@drawable/ic_contacts"-->
+        <!--                    android:layout_height="match_parent"/>-->
+
+        <!--            </androidx.cardview.widget.CardView>-->
+
+        <TextView
+            android:id="@+id/contacts_name"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/photo_con"
+            android:hint="Vijay jv Vc"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <TextView
             android:id="@+id/contacts_number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_below="@+id/contacts_name"
-            android:textStyle="bold"
-            android:hint="Vijay jv Vc"
+            android:layout_toEndOf="@+id/photo_con"
             android:gravity="center_vertical"
-            android:textSize="16sp"
-            android:textColor="@color/black"/>
+            android:hint="+91 985550212x"
+            android:paddingTop="7dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
 
-   </RelativeLayout>
-</androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</RelativeLayout>
