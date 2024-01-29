@@ -14,7 +14,7 @@
 
 
 
-
+ngrok config add-authtoken 1sZvza4ELaRIO0VHZkOCiHPLFkh_37anro4gRdrqGdU7svcTy
 
  ## -UI/UX Design images
  
